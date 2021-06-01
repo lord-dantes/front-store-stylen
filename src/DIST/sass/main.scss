@@ -1,0 +1,23 @@
+@import "variables-functions-and-mixins";
+
+::selection { background: rgba($green-color, .5); }
+* { font-family: "Montserrat", Serif; }
+.container-fluid {max-width: 1480px;}
+.align-right { text-align: right; }
+.align-left { text-align: left; }
+.align-center { text-align: center; }
+
+@import 'media';
+@import "fonts";
+.checkbox_form {
+  list-style-type: none;
+  margin-left: -15px;
+}
+
+.checkbox_form label {
+  color: black;
+  font-family: "Philosopher", serif;
+  font-size: 16px;
+  font-weight: lighter;
+  margin-bottom: 10px;
+}
