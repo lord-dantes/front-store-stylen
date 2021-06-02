@@ -7,27 +7,23 @@
         trigger="click"
         arrow="always"
       >
-        <el-carousel-item
-          v-for="(item, i) in this.$store.state.products"
-          :key="i"
-        >
-          <img :src="item.fimg_url" />
-          <p v-html="item.title.rendered"></p>
+        <el-carousel-item>
+          <img src="https://images.ua.prom.st/2721292804_2721292804.jpg" />
         </el-carousel-item>
       </el-carousel>
     </section>
     <section class="shop">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-12"><h2 class="shop-title">Товары</h2></div>
+          <div class="col-md-12"><h2 class="shop-title">Товари</h2></div>
           <div class="col-md-12">
             <div class="shop-box">
               <ul class="shop-box-menu">
                 <li class="shop-box-item">
-                  <router-link class="shop-box-link" to="/catalog/man-collection/">Мужская коллекция</router-link>
+                  <router-link class="shop-box-link" to="/catalog/man-collection/">ЧОЛОВІЧА КОЛЛЕКЦІЯ</router-link>
                 </li>
                 <li class="shop-box-item">
-                  <router-link class="shop-box-link" to="/catalog/woman-collection/">Женская коллекция</router-link>
+                  <router-link class="shop-box-link" to="/catalog/woman-collection/">ЖІНОЧА КОЛЕКЦІЯ</router-link>
                 </li>
               </ul>
             </div>
@@ -95,16 +91,16 @@
     <section class="bg-wrapper">
       <div class="sm-wrapper">
         <div class="lions">
-          <router-link class="lions-img" to="/catalog/mans-collection/">
+          <router-link class="lions-img" to="/catalog/man-collection/">
             <div class="lions-info">
-              <span class="lions-title">Мужская коллекция</span>
+              <span class="lions-title">ЧОЛОВІЧА КОЛЛЕКЦІЯ</span>
             </div>
           </router-link>
         </div>
         <div class="revived">
           <router-link class="revived-img" to="/catalog/woman-collection/">
             <div class="revived-info">
-              <span class="revived-title">Женская коллекция</span>
+              <span class="revived-title">ЖІНОЧА КОЛЕКЦІЯ</span>
             </div>
           </router-link>
         </div>
@@ -113,7 +109,7 @@
     <section class="news">
       <div class="container-fluid">
         <div class="row">
-          <h2 class="news-title">Последние новости</h2>
+          <h2 class="news-title">Останні новини</h2>
           <div class="col-md-2">
             <a href="#"
               ><img
@@ -214,29 +210,6 @@
         </div>
       </div>
     </section>
-    <section class="callback-news">
-      <h2 class="callback-news-title">Подпишитесь на наши новости</h2>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="callback-news-form">
-              <form action="#">
-                <input
-                  class="callback-news-form-email"
-                  type="email"
-                  placeholder="Введите ваш e-mail"
-                />
-                <input
-                  class="callback-news-form-button"
-                  type="button"
-                  value="Подписаться"
-                />
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <section class="features">
       <div class="container-fluid">
         <div class="row">
@@ -244,16 +217,16 @@
             <div class="features-box">
               <div class="row">
                 <div class="col-md-4 col-sm-4 features-box-icon">
-                  <img src="img/icon-features.png" alt="" />
-                  <div class="features-description">Бесплатная доставка</div>
+                  <img src="../assets/img/icon-features.png" alt="" />
+                  <div class="features-description">Безкоштовна доставка</div>
                 </div>
                 <div class="col-md-4 col-sm-4 features-box-icon">
-                  <img src="img/icon-features2.png" alt="" />
-                  <div class="features-description">Поддержка 24/7</div>
+                  <img src="../assets/img/icon-features2.png" alt="" />
+                  <div class="features-description">Підтримка 24/7</div>
                 </div>
                 <div class="col-md-4 col-sm-4 features-box-icon">
-                  <img src="img/icon-features3.png" alt="" />
-                  <div class="features-description">ТОП продавец</div>
+                  <img src="../assets/img/icon-features3.png" alt="" />
+                  <div class="features-description">ТОП продавець</div>
                 </div>
               </div>
             </div>

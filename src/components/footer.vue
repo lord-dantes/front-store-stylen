@@ -12,74 +12,37 @@
           <div class="col-md-2 col-sm-3 col-xs-6">
             <div class="footer-name-nav">Каталог</div>
             <ul class="footer-nav">
-              <li class="footer-item">
-                <a class="footer-link" href="#">Акссесуары</a>
-              </li>
-              <li class="footer-item">
-                <a class="footer-link" href="#">Браслеты</a>
-              </li>
-              <li class="footer-item">
-                <a class="footer-link" href="#">Колье/Подвески</a>
-              </li>
-              <li class="footer-item">
-                <a class="footer-link" href="#">Кольца</a>
-              </li>
-              <li class="footer-item">
-                <a class="footer-link" href="#">Крестики</a>
-              </li>
-            </ul>
+                <li class="footer-item">
+                  <router-link class="footer-link" to="/catalog/woman-collection/">Жiноча коллекцiя</router-link>
+                </li>
+                <li class="footer-item">
+                  <router-link class="footer-link" to="/catalog/man-collection/">Чоловiча коллекцiя</router-link>
+                </li>
+              </ul>
           </div>
           <div class="col-md-2 col-sm-3 footer-box-item col-xs-6">
-            <div class="footer-box-nav-collection">
-              <ul class="footer-nav">
-                <li class="footer-item">
-                  <a class="footer-link" href="#">Наборы</a>
-                </li>
-                <li class="footer-item">
-                  <a class="footer-link" href="#">Перстни</a>
-                </li>
-                <li class="footer-item">
-                  <a class="footer-link" href="#">Серьги</a>
-                </li>
-                <li class="footer-item">
-                  <a class="footer-link" href="#">Черные бриллианты</a>
-                </li>
-                <li class="footer-item">
-                  <a class="footer-link" href="#">Юбилей / Помолвка</a>
-                </li>
-              </ul>
-            </div>
+           
           </div>
           <div class="col-md-3 col-sm-3 col-xs-12">
-            <div class="footer-box-nav-collection footer-box-nav-collection-sm">
+            <!-- <div class="footer-box-nav-collection footer-box-nav-collection-sm">
               <ul class="footer-nav">
                 <li class="footer-item">
-                  <a class="footer-link" href="#"
-                    >Женская линейка Revived 925</a
-                  >
+                  <router-link class="footer-link" to="/catalog/mans-collection/">Жiноча коллекцiя</router-link>
                 </li>
                 <li class="footer-item">
-                  <a class="footer-link" href="#"
-                    >Мужская линейка Lion’s Heart</a
-                  >
+                  <router-link class="footer-link" to="/catalog/woman-collection/">Чоловiча коллекцiя</router-link>
                 </li>
               </ul>
-            </div>
+            </div> -->
           </div>
           <div class="col-md-2 col-sm-3 col-xs-6">
-            <div class="footer-name-info">Информация</div>
+            <div class="footer-name-info">Информацiя</div>
             <ul class="footer-nav">
               <li class="footer-item">
-                <a class="footer-link" href="#">О компании</a>
+                <a class="footer-link" href="#">Новини</a>
               </li>
               <li class="footer-item">
-                <a class="footer-link" href="#">Наши услуги</a>
-              </li>
-              <li class="footer-item">
-                <a class="footer-link" href="#">Новости</a>
-              </li>
-              <li class="footer-item">
-                <a class="footer-link" href="#">Контакты</a>
+                <a class="footer-link" href="#">Контакти</a>
               </li>
             </ul>
           </div>
@@ -88,15 +51,15 @@
     </div>
     <div class="certificate">
       <div class="certificate-boxvisa">
-        <div class="certificate-visa">Принимаем к оплате</div>
+        <div class="certificate-visa">Можна розраховуватися</div>
         <img src="../assets/img/visa-mastercard.png" alt="" />
       </div>
       <div class="certificate-boxliqpay">
-        <div class="certificate-liqpay">Безопасные платежи</div>
+        <div class="certificate-liqpay">Безпечні платежі</div>
         <img src="../assets/img/liqpay.png" alt="" />
       </div>
       <div class="certificate-boxsmm">
-        <div class="certificate-smm">Присоединяйтесь к нам</div>
+        <div class="certificate-smm">Приєднуйся до нас</div>
         <a href="#"><img src="../assets/img/facebook.png" alt="facebook" /></a>
         <a class="certificate-linkinstagramm" href="#"
           ><img src="../assets/img/instagramm.png" alt="instagramm"

@@ -161,7 +161,7 @@
             <div class="clearfix"></div>
             <div class="shops-footer">
               <div class="shops-footer-prev">
-                <a class="shops-footer-prev-link" href="#">
+                <a class="shops-footer-prev-link" href="javascript:void(0);">
                   <img
                     class="shops-footer-prev-img"
                     src="../assets/img/arrow-left.png"
@@ -172,19 +172,21 @@
               </div>
               <div class="shops-footer-counter">
                 <ul class="shops-footer-counter-items">
-                  <li class="shops-footer-counter-item-active">
+                  <!-- shops-footer-counter-item-active -->
+                  <li class="shops-footer-counter-item">
+                    <!-- shops-footer-counter-link-active -->
                     <a
-                      class="shops-footer-counter-link shops-footer-counter-link-active"
-                      href="#"
+                      class="shops-footer-counter-link"
                       >1</a
                     >
                   </li>
                 </ul>
               </div>
+              <!-- shops-footer-next-link-active -->
               <div class="shops-footer-next">
                 <a
-                  class="shops-footer-next-link shops-footer-next-link-active"
-                  href="#"
+                  class="shops-footer-next-link"
+                  href="javascript:void(0);"
                   >Вперед
                   <img
                     class="shops-footer-next-img"

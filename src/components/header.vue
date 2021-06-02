@@ -7,7 +7,7 @@
             <form class="header-form" action="#">
               <input
                 class="header-form-search"
-                placeholder="Поиск"
+                placeholder="Пошук"
                 type="search"
               />
             </form>
@@ -22,7 +22,7 @@
           <div class="col-md-4 col-xs-12">
             <div class="header-box-shop">
               <div class="header-textshop">
-                <span class="header-text">Бесплатно по Украине</span>
+                <span class="header-text">Безкоштовно по Україні</span>
                 <br />
                 <span class="header-number">+38 (063) 666 66 66</span>
               </div>
@@ -33,7 +33,7 @@
                     >0</span
                   >
                 </div>
-                <a class="header-shop-basket" href="#Корзина">Корзина</a>
+                <a class="header-shop-basket" href="javascript:void(0);">Кошик</a>
               </div>
             </div>
           </div>
@@ -50,12 +50,8 @@
               <router-link to="/catalog/" class="dropdown dropdown-standart"
                 >Каталог</router-link>
             </li>
-            <li class="link-standart">
-              <a href="" class="dropdown dropdown-standart">О компании</a>
-            </li>
-            <li><a href="">Наши услуги</a></li>
-            <li><a href="">Новости</a></li>
-            <li><a href="">Контакты</a></li>
+            <li><a href="">НОВИНИ</a></li>
+            <li><a href="">КОНТАКТИ</a></li>
           </ul>
         </div>
       </nav>

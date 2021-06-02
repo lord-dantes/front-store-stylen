@@ -126,19 +126,18 @@
                   <p class="features-title">Доставка</p>
                 </div>
                 <div class="features-pg">
-                  Новая Почта (отделение)
+                  Нова Пошта (відділення)
                   <p class="features-pg-info">
-                    <span class="features-pg-info-word">Бесплатно.</span> Вы
-                    оплачиваете только стоимость товара.
+                    <span class="features-pg-info-word">Безкоштовно.</span> Ви оплачуєте тільки вартість товару.
                   </p>
                 </div>
                 <div class="features-pg">
-                  Курьером (по Украине)
-                  <p class="features-pg-info">Более 1000 грн.: Бесплатно</p>
+                  Кур'єром (по Україні)
+                  <p class="features-pg-info">Більше 1000 грн .: Безкоштовно</p>
                 </div>
                 <div class="features-pg">
-                  Самовывоз из магазина
-                  <p class="features-pg-info">г. Киев, Дримтаун</p>
+                  Самовивіз з магазину
+                  <p class="features-pg-info">м. Київ, Дрiмтаун</p>
                 </div>
               </div>
               <div class="features-pay">
@@ -149,9 +148,9 @@
                   <p class="features-title">Оплата</p>
                 </div>
                 <div>
-                  <p class="features-pg">Наличными при получении</p>
+                  <p class="features-pg">Готівкою при отриманні</p>
                   <p class="features-pg">
-                    Оплата платежной картой Visa/Mastercard
+                    Оплата платіжною карткою Visa / Mastercard
                   </p>
                 </div>
               </div>
@@ -160,7 +159,7 @@
                   <p><img src="../assets/img/features-exchange.png" alt="" /></p>
                 </div>
                 <div class="features-title">
-                  <p class="features-title">Обмен 14 дней</p>
+                  <p class="features-title">Обмiн 14 днiв</p>
                 </div>
               </div>
             </div>

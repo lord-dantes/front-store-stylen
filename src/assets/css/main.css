@@ -228,7 +228,7 @@
 
 /*HEADER*/
 .slider {
-  max-height: 500px;
+  max-height: 800px;
 }
 
 .slider-img {
@@ -403,6 +403,7 @@
 
 .news {
   margin-top: 50px;
+  padding-bottom: 50px;
 }
 
 .news-title {
@@ -1079,7 +1080,7 @@
 }
 
 .header-navigation .containerss {
-  max-width: 960px;
+  max-width: 500px;
   margin: 0 auto;
 }
 
@@ -1211,24 +1212,24 @@
 .lions-title {
   font-family: "Philosopher";
   font-size: 24px;
-  color: black;
+  color: #fff;
 }
 
 .lions-title:hover {
-  color: black;
+  color: #fff;
 }
 
 .lions-img {
   width: 100%;
   height: 100%;
   display: block;
-  background-image: url(../img/lions.png);
+  background-image: url(https://api.stylen.online/wp-content/uploads/2021/06/v_tsentre_vnimaniya_7_priemov_obuvnoy_reklamy.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-filter: brightness(0.7);
           filter: brightness(0.7);
   -webkit-transition: ease 500ms;
-  transition: ease 500ms;
+  transition: all 500ms;
 }
 
 .lions-img:hover {
@@ -1248,11 +1249,11 @@
 .revived-title {
   font-family: "Philosopher";
   font-size: 24px;
-  color: black;
+  color: #fff;
 }
 
 .revived-title:hover {
-  color: black;
+  color: #fff;
 }
 
 .revived-info {
@@ -1285,13 +1286,13 @@
   width: 100%;
   height: 100%;
   display: block;
-  background-image: url(../img/revived.png);
+  background-image: url(https://api.stylen.online/wp-content/uploads/2021/06/depositphotos_32497283-stock-photo-consumer-shopping-for-shoes.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-filter: brightness(0.7);
           filter: brightness(0.7);
   -webkit-transition: ease 500ms;
-  transition: ease 500ms;
+  transition: all 500ms;
 }
 
 .revived-img:hover {
@@ -1521,6 +1522,7 @@ nav {
 
 .shops-footer-next-link-active img {
   opacity: 1;
+  filter: invert(1);
 }
 
 .shops-footer-next-link:hover {
@@ -1579,7 +1581,7 @@ nav {
 .shops-footer-counter-link {
   display: block;
   padding: 15px 20px;
-  color: #fff;
+  color: #bf0404;
   font-family: "Philosopher";
   font-size: 16px;
 }
@@ -1676,7 +1678,7 @@ nav {
 .shops-footer-next-link-active {
   margin-right: -1px;
   padding: 15px 25px;
-  color: black;
+  color: #fff;
   background: #bf0404;
   font-family: "Philosopher";
   font-size: 16px;
