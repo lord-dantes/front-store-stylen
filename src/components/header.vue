@@ -30,10 +30,10 @@
                 <div class="header-shop-heart">
                   <img src="../assets/img/icon-shop.png" alt="heart" /><span
                     class="header-shop-heart-number"
-                    >0</span
+                    >{{ this.$store.state.orderProducts.length }}</span
                   >
                 </div>
-                <a class="header-shop-basket" href="javascript:void(0);">Кошик</a>
+                <router-link class="header-shop-basket" to="/cart/">Кошик</router-link>
               </div>
             </div>
           </div>

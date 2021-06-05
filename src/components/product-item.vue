@@ -77,6 +77,7 @@
                     </div>
                     <form action="#">
                       <input
+                        @click="addProductOrder(currentProductData[0].id)"
                         class="button-for-buy-product"
                         type="button"
                         value="Придбати"
@@ -194,6 +195,9 @@ export default {
       this.axios
         .get("https://api.stylen.online/wp-json/wp/v2/news?slug=" + this.$route.params.slug)
         .then((response) => (this.currentProductData = response.data));
+    },
+    addProductOrder(id) {
+      this.$store.commit('getOrderProduct', id)
     },
   },
   created() {
