@@ -6,6 +6,7 @@ import ProductItem from '../components/product-item'
 import Catalog from '../views/Catalog'
 import Cart from '../views/Cart'
 import Checkout from '../views/Checkout'
+import Thanks from '../views/Thanks'
 
 Vue.use(VueRouter)
 
@@ -39,6 +40,11 @@ const routes = [
     path: '/checkout/',
     name: 'Checkout',
     component: Checkout
+  },
+  {
+    path: '/thanks/',
+    name: 'Thanks',
+    component: Thanks
   }
 ]
 

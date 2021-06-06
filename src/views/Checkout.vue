@@ -1,6 +1,6 @@
 <template>
   <main>
-    <section class="cart breadcrumbs">
+    <section class="cart checkout breadcrumbs">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
@@ -12,12 +12,12 @@
           </div>
           <div class="col-md-12">
             <h1 class="shops-title">Оформление заказа</h1>
-            <form @submit.prevent="sendForm()">
-              <input type="text" v-model="clientData.name">
-              <input type="text" v-model="clientData.surname">
-              <input type="text" v-model="clientData.email">
-              <input type="text" v-model="clientData.phone">
-              <button>send</button>
+            <form class="checkout-form" @submit.prevent="sendForm()">
+              <input type="text" placeholder="Имя" v-model="clientData.name">
+              <input type="text" placeholder="Фамiлiя" v-model="clientData.surname">
+              <input type="email" placeholder="Email" v-model="clientData.email">
+              <input type="text" placeholder="Телефон" v-model="clientData.phone">
+              <button>Вiдправити заявку</button>
             </form>
           </div>
         </div>
@@ -41,7 +41,16 @@ export default {
   methods: {
      sendForm() {
       this.$store.commit('sendOrderData', this.clientData);
+      this.$router.push({ path: '/thanks/' })
+    },
+    redirect() {
+      if (this.$store.state.orderProducts.length <= 0) {
+        this.$router.push({ path: '/' })
+      }
     }
+  },
+  mounted() {
+    this.redirect();
   }
 }
 </script>

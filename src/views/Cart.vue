@@ -65,7 +65,16 @@ export default {
     },
     removeProductFromCart(id) {
       this.$store.commit('removeOrderProduct', id)
+      this.redirect();
+    },
+    redirect() {
+      if (this.$store.state.orderProducts.length <= 0) {
+        this.$router.push({ path: '/' })
+      }
     }
+  },
+  mounted() {
+    this.redirect();
   }
 }
 </script>

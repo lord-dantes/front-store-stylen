@@ -93,14 +93,14 @@
         <div class="lions">
           <router-link class="lions-img" to="/catalog/man-collection/">
             <div class="lions-info">
-              <span class="lions-title">ЧОЛОВІЧА КОЛЛЕКЦІЯ</span>
+              <span class="lions-title">Чоловiча колекцiя</span>
             </div>
           </router-link>
         </div>
         <div class="revived">
           <router-link class="revived-img" to="/catalog/woman-collection/">
             <div class="revived-info">
-              <span class="revived-title">ЖІНОЧА КОЛЕКЦІЯ</span>
+              <span class="revived-title">Жiноча колекцiя</span>
             </div>
           </router-link>
         </div>

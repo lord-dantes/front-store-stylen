@@ -6,17 +6,17 @@
           <div class="col-md-2 col-sm-3">
             <div class="footer-logo">
               <a href="#"><img src="../assets/img/logo.png" alt="" /></a>
-              <div class="footer-number">+38 (063) 123 45 67</div>
+              <div class="footer-number">+38 (095) 093 24 33</div>
             </div>
           </div>
           <div class="col-md-2 col-sm-3 col-xs-6">
             <div class="footer-name-nav">Каталог</div>
             <ul class="footer-nav">
                 <li class="footer-item">
-                  <router-link class="footer-link" to="/catalog/woman-collection/">Жiноча коллекцiя</router-link>
+                  <router-link class="footer-link" to="/catalog/woman-collection/">Жiноча колекцiя</router-link>
                 </li>
                 <li class="footer-item">
-                  <router-link class="footer-link" to="/catalog/man-collection/">Чоловiча коллекцiя</router-link>
+                  <router-link class="footer-link" to="/catalog/man-collection/">Чоловiча колекцiя</router-link>
                 </li>
               </ul>
           </div>

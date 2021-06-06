@@ -77,10 +77,11 @@
                     </div>
                     <form action="#">
                       <input
-                        @click="addProductOrder(currentProductData[0].id)"
+                        @click="addProductOrder(currentProductData[0].id); checkThisProduct();"
                         class="button-for-buy-product"
                         type="button"
                         value="Придбати"
+                        :disabled="btnActive"
                       />
                     </form>
                     <div class="info-product">
@@ -182,6 +183,8 @@ export default {
   },
   data() {
     return {
+      btnActive: false,
+      orderProducts: this.$store.state.orderID,
       currentProductDataLoading: true,
       currentProductData: [],
       media: {
@@ -199,9 +202,21 @@ export default {
     addProductOrder(id) {
       this.$store.commit('getOrderProduct', id)
     },
+    checkThisProduct() {
+      if (this.orderProducts) {
+        for (let z = 0; z < this.orderProducts.length; z++) {
+          if (this.orderProducts[z] === this.currentProductData[0].id) {
+            return this.btnActive = true;
+          }
+        }
+      }
+    }
   },
   created() {
     this.getProductData();
+  },
+  mounted() {
+    setTimeout(() => this.checkThisProduct(), 300);
   },
   computed: {
     mediaUrls: function () {
