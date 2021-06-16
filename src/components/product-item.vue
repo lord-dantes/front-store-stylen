@@ -77,11 +77,11 @@
                     </div>
                     <form action="#">
                       <input
-                        @click="addProductOrder(currentProductData[0].id); checkThisProduct();"
+                        @click="addProductOrder(currentProductData[0].id, currentProductSize);"
                         class="button-for-buy-product"
                         type="button"
-                        value="Придбати"
-                        :disabled="btnActive"
+                        value="Добавити в кошик"
+                        :disabled="currentProductSize.length <= 0"
                       />
                     </form>
                     <div class="info-product">
@@ -91,17 +91,26 @@
                       Колiр: <span class="info-text-product">{{ currentProductData[0].acf.color }}</span>
                     </div>
                     <div class="info-product">
-                      Розмiри: <span class="info-text-product">{{ currentProductData[0].acf.size }}</span>
+                      Розмiри:
+                      <!-- <span class="info-text-product">{{ currentProductData[0].acf.size }}</span> -->
+                      <el-select v-model="currentProductSize" placeholder="--">
+                        <el-option v-for="item in currentProductData[0].acf.size"
+                          :key="item.itemSize"
+                          :label="item.itemSize"
+                          :value="item.itemSize">
+                        </el-option>
+                      </el-select>
                     </div>
-                    <div class="share-social-links">Подiлитися:</div>
-                    <div class="box-social-links">
+                    <p class="info-product--attention-size" v-show="currentProductSize.length <= 0">Оберiть розмiр товару</p>
+                    <!-- <div class="share-social-links">Подiлитися:</div> -->
+                    <!-- <div class="box-social-links">
                       <a class="social-links" href="#"
                         ><img src="../assets/img/facebook.png" alt=""
                       /></a>
                       <a class="social-links" href="#"
                         ><img src="../assets/img/instagramm.png" alt="instagramm"
                       /></a>
-                    </div>
+                    </div> -->
                     <div class="box-discounts">
                       <div class="name-discounts">Працюють знижки</div>
                       <div class="discount">-10% при покупцi однієї пари</div>
@@ -139,7 +148,7 @@
                 </div>
                 <div class="features-pg">
                   Самовивіз з магазину
-                  <p class="features-pg-info">м. Київ, Дрiмтаун</p>
+                  <p class="features-pg-info">м.Бориспіль, вул. Київський шлях 77</p>
                 </div>
               </div>
               <div class="features-pay">
@@ -183,10 +192,10 @@ export default {
   },
   data() {
     return {
-      btnActive: false,
       orderProducts: this.$store.state.orderID,
       currentProductDataLoading: true,
       currentProductData: [],
+      currentProductSize: '',
       media: {
         readyURLs: [],
         index: null,
@@ -199,24 +208,13 @@ export default {
         .get("https://api.stylen.online/wp-json/wp/v2/news?slug=" + this.$route.params.slug)
         .then((response) => (this.currentProductData = response.data));
     },
-    addProductOrder(id) {
-      this.$store.commit('getOrderProduct', id)
-    },
-    checkThisProduct() {
-      if (this.orderProducts) {
-        for (let z = 0; z < this.orderProducts.length; z++) {
-          if (this.orderProducts[z] === this.currentProductData[0].id) {
-            return this.btnActive = true;
-          }
-        }
+    addProductOrder(id, size) {
+      let number = parseInt(size)
+      if (!isNaN(number)) {
+        this.$store.commit('getOrderProduct', {id, number})
+        this.$router.push({ path: '/cart/' })
       }
-    }
-  },
-  created() {
-    this.getProductData();
-  },
-  mounted() {
-    setTimeout(() => this.checkThisProduct(), 300);
+    },
   },
   computed: {
     mediaUrls: function () {
@@ -227,6 +225,12 @@ export default {
     currentProductData: function () {
       this.currentProductDataLoading = false;
     },
+    '$route.params.slug': {
+      immediate: true,
+      handler() {
+        this.getProductData();
+      }
+    }
   },
 };
 </script>
@@ -247,5 +251,46 @@ main {
 }
 .owl-carousel.owl-drag .owl-item {
   padding: 20px;
+}
+.info-product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.el-select {
+  max-width: 30px;
+}
+.el-input--suffix .el-input__inner {
+  font-family: 'Philosopher';
+  font-weight: lighter;
+  border: none;
+  border-bottom: solid 1px #C0C4CC;
+  border-radius: 0;
+}
+.el-select .el-input--suffix .el-input__inner {
+  padding-right: 0;
+}
+.el-select .el-input__inner {
+  height: 20px;
+  line-height: 20px;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 14px;
+  text-align: right;
+}
+.el-select .el-input__suffix {
+  display: none;
+}
+.el-select-dropdown__item{
+  text-align: right;
+}
+.el-select-dropdown__item span {
+  font-family: 'Philosopher';
+}
+.el-select .el-input.is-focus .el-input__inner, .el-select .el-input__inner:focus {
+  border-color: #bf0404 !important;
+}
+.el-select-dropdown__item.selected {
+  color: #bf0404 !important;
 }
 </style>

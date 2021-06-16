@@ -28,13 +28,16 @@
                       <s v-if="item.acf.oldPrice">{{ item.acf.oldPrice }} грн</s>
                       {{ item.acf.price }} грн
                     </p>
+                    <p class="cart-item-price">
+                      Розмiр: {{ item.acf.selectSize }}
+                    </p>
                     <button @click="removeProductFromCart(item.id)"><i class="el-icon-close"></i></button>
                   </li>
                 </transition-group>
               <!-- </ul> -->
               <div class="cart-total">
                 <p>Всього: {{ totalPrice() }} грн</p>
-                <router-link to="/checkout/">Продолжить оформление</router-link>
+                <router-link to="/checkout/">Продовжити оформлення</router-link>
               </div>
             </div>
           </div>

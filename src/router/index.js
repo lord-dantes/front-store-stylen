@@ -7,6 +7,10 @@ import Catalog from '../views/Catalog'
 import Cart from '../views/Cart'
 import Checkout from '../views/Checkout'
 import Thanks from '../views/Thanks'
+import News from '../views/News'
+import NewsItem from '../components/news-item'
+import ErrorPage from '../views/404'
+import Contacts from '../views/Contacts'
 
 Vue.use(VueRouter)
 
@@ -45,6 +49,26 @@ const routes = [
     path: '/thanks/',
     name: 'Thanks',
     component: Thanks
+  },
+  {
+    path: '/news/',
+    name: 'News',
+    component: News
+  },
+  {
+    path: '/news/:slug',
+    name: 'News Item',
+    component: NewsItem
+  },
+  {
+    path: '/contacts/',
+    name: 'Contacts',
+    component: Contacts
+  },
+  {
+    path: '*',
+    name: '404',
+    component: ErrorPage
   }
 ]
 

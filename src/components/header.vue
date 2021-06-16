@@ -1,23 +1,30 @@
 <template>
   <div class="header">
-    <ul v-loading="searchLoading">
-      <li v-for="(item, i) in searchData" :key="i">
-        <img width="90px" :src="item.fimg_url" alt="">
-        <!-- {{ item.id }} -->
-      </li>
-    </ul>
     <div class="container-fluid">
       <div class="row">
         <div class="header-box">
           <div class="col-md-4 col-xs-12">
-            <form class="header-form" action="#">
+            <form v-loading="searchLoading" class="header-form" @submit.prevent="getSearchId()">
               <input
                 class="header-form-search"
                 placeholder="Пошук"
-                type="search"
+                type="text"
                 v-model="inputSearch"
-              />
+              />              
+              <button><i :class="searchData.length > 0 ? 'el-icon-circle-close' : 'el-icon-search'"></i></button>
             </form>
+            <transition name="fade">
+              <ul class="header-search-items" v-show="searchData.length > 0" v-loading="searchLoading">
+                <li @click="searchData = []" v-for="(item, i) in searchData" :key="i">
+                  <router-link :to="'/product/' + item.slug + '/'">
+                    <img :src="item.fimg_url" alt="">
+                    <p>{{ item.title.rendered }}</p>  
+                    <p>Артикул: {{ item.id }}</p>
+                    <p>{{ item.acf.price }} грн</p>
+                  </router-link>
+                </li>
+              </ul>
+            </transition>
           </div>
           <div class="col-md-4 col-xs-12">
             <div class="header-logo">
@@ -35,10 +42,12 @@
               </div>
               <div class="header-shop">
                 <div class="header-shop-heart">
-                  <img src="../assets/img/icon-shop.png" alt="heart" /><span
+                  <img src="../assets/img/icon-shop.png" alt="heart" />
+                  <span
                     class="header-shop-heart-number"
-                    >{{ this.$store.state.orderProducts.length }}</span
                   >
+                    {{ this.$store.state.orderProducts.length }}
+                  </span>
                 </div>
                 <transition name="fade">
                   <template v-if="this.$store.state.orderProducts.length <= 0">
@@ -64,8 +73,8 @@
               <router-link to="/catalog/" class="dropdown dropdown-standart"
                 >Каталог</router-link>
             </li>
-            <li><a href="">НОВИНИ</a></li>
-            <li><a href="">КОНТАКТИ</a></li>
+            <li><router-link to="/news/">Новини</router-link></li>
+            <li><router-link to="/contacts/">КОНТАКТИ</router-link></li>
           </ul>
         </div>
       </nav>
@@ -84,31 +93,35 @@ export default {
     }
   },
   methods: {
-    // getSearchId() {
-    //   this.searchId = [];
-    //   this.axios
-    //     .get("https://api.stylen.online/wp-json/wp/v2/search?subtype=news&search=" + this.inputSearch)
-    //     .then((response) => (this.searchId = response.data));
-    //   setTimeout(() => this.getSearchData(), 1000);        
-    // },
-    // getSearchData() {
-    //   this.searchData = [];
-    //   for (let z = 0; z < this.searchId.length; z++) {
-    //     this.axios
-    //       .get("https://api.stylen.online/wp-json/wp/v2/news?include[]=" + this.searchId[z].id)
-    //       .then((response) => (this.searchData.push(response.data[0])));
-    //   }
-    //   this.searchLoading = false;
-    // }
+    clearData() {
+      this.searchData = [];
+    },
+    getSearchId() {
+      this.searchLoading = true;
+      this.searchId = [];
+      this.axios
+        .get("https://api.stylen.online/wp-json/wp/v2/search?subtype=news&search=" + this.inputSearch)
+        .then((response) => (this.searchId = response.data));
+      setTimeout(() => this.getSearchData(), 1000);        
+    },
+    getSearchData() {
+      this.searchData = [];
+      for (let z = 0; z < this.searchId.length; z++) {
+        this.axios
+          .get("https://api.stylen.online/wp-json/wp/v2/news?include[]=" + this.searchId[z].id)
+          .then((response) => (this.searchData.push(response.data[0])));
+      }
+      this.searchLoading = false;
+    }
   },
   mounted() {
     // this.getSearchData();
   },
+  created() {
+    document.addEventListener('click', () => this.searchData = []);
+  },
   watch: {
-    // "inputSearch": function() {
-    //   this.searchLoading = true;
-    //   setTimeout(() => this.getSearchId(), 2000);
-    // }
+    
   }
 }
 </script>

@@ -20,9 +20,7 @@ export default new Vuex.Store({
         email: String,
         phone: String
       },
-      [
-
-      ]
+      []
     ]
   },
   mutations: {
@@ -41,12 +39,15 @@ export default new Vuex.Store({
         .get('https://api.stylen.online/wp-json/wp/v2/news/?categories=3')
         .then(response => state.womanProducts = response.data)       
     },
-    getOrderProduct(state, id){
-      if (state.orderID.indexOf(id) == -1) { 
+    getOrderProduct(state, {id, number}){
+      if (state.orderID.indexOf(id) == -1 ) { 
         state.orderID.push(id)
         axios
           .get('https://api.stylen.online/wp-json/wp/v2/news/' + id)
-          .then(response => state.orderProducts.push(response.data))  
+          .then(function(response) {
+            response.data.acf['selectSize'] = number
+            state.orderProducts.push(response.data)
+          })
       }
     },
     removeOrderProduct(state, id) {
@@ -70,8 +71,6 @@ export default new Vuex.Store({
       for (let i = 0; i < state.orderProducts.length; i++) {
         state.sendOrderData[1].push(state.orderProducts[i]);
       }
-      
-      console.log(state.sendOrderData);
       axios
         .post(
           "https://api.stylen.online/wp-content/themes/twentytwentyone/shopSender.php", 
@@ -82,6 +81,8 @@ export default new Vuex.Store({
             }
           }
         )
+      state.orderID = []
+      state.orderProducts = []
     }
   },
 })

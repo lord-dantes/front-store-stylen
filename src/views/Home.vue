@@ -20,7 +20,7 @@
             <div class="shop-box">
               <ul class="shop-box-menu">
                 <li class="shop-box-item">
-                  <router-link class="shop-box-link" to="/catalog/man-collection/">ЧОЛОВІЧА КОЛЛЕКЦІЯ</router-link>
+                  <router-link class="shop-box-link" to="/catalog/man-collection/">ЧОЛОВІЧА КОЛЕКЦІЯ</router-link>
                 </li>
                 <li class="shop-box-item">
                   <router-link class="shop-box-link" to="/catalog/woman-collection/">ЖІНОЧА КОЛЕКЦІЯ</router-link>
@@ -110,102 +110,16 @@
       <div class="container-fluid">
         <div class="row">
           <h2 class="news-title">Останні новини</h2>
-          <div class="col-md-2">
-            <a href="#"
-              ><img
-                class="news-img-discont"
-                src="../assets/img/img-news-1.png"
-                alt=""
-            /></a>
-          </div>
-          <div class="col-md-7">
-            <div class="news-one-post">
-              <div class="row">
-                <div class="col-md-3">
-                  <a href="#"
-                    ><img
-                      class="news-one-post-img"
-                      src="../assets/img/img-news-2.png"
-                      alt=""
-                  /></a>
-                </div>
-                <div class="col-md-9 col-xs-12">
-                  <div class="news-one-post-data">
-                    <a class="news-one-post-data-link" href="#">01.01.17</a>
-                  </div>
-                  <div class="news-one-post-counter">
-                    <a class="news-one-post-counter-link" href="#">55</a>
-                  </div>
-                  <div class="news-one-post-title">
-                    <a class="news-one-post-title-link" href="#"
-                      >Сайт рыбатекст поможет дизайнеру,верстальщику,
-                      вебмастеру</a
-                    >
-                  </div>
-                  <div class="news-one-post-description">
-                    <a class="news-one-post-description-link" href="#"
-                      >С другой стороны дальнейшее развитие различных форм
-                      деятельности играет важную роль в формировании системы
-                      обучения кадров, соответствует насущным потребностям.</a
-                    >
-                  </div>
-                  <a class="news-one-post-link" href="#">Читать</a>
-                </div>
+          <div class="snews-items">
+            <router-link :to="'/news/' + item.slug + '/'" class="snews-item" v-for="(item, i) in newsData" :key="i">
+                <img :src="item.fimg_url" />
+              <div class="snews-info">
+                <p class="snews-item-date" v-html="item.formatted_date"></p>
+                <p class="snews-item-title" v-html="item.title.rendered"></p>
+                <p class="snews-item-contents" v-html="item.content.rendered"></p>
+                <p class="snews-item-link">Детальнiше</p>
               </div>
-            </div>
-            <div class="news-two-post">
-              <div class="row">
-                <div class="col-md-3">
-                  <a href="#"
-                    ><img
-                      class="news-two-post-img"
-                      src="../assets/img/img-news-3.png"
-                      alt=""
-                  /></a>
-                </div>
-                <div class="col-md-9 col-xs-12">
-                  <div class="news-two-post-data">
-                    <a class="news-two-post-data-link" href="#">01.01.17</a>
-                  </div>
-                  <div class="news-two-post-counter">
-                    <a class="news-two-post-counter-link" href="#">55</a>
-                  </div>
-                  <div class="news-two-post-title">
-                    <a class="news-two-post-title-link" href="#"
-                      >Сайт рыбатекст поможет дизайнеру,верстальщику,
-                      вебмастеру</a
-                    >
-                  </div>
-                  <div class="news-two-post-description">
-                    <a class="news-two-post-description-link" href="#"
-                      >С другой стороны дальнейшее развитие различных форм
-                      деятельности играет важную роль в формировании системы
-                      обучения кадров, соответствует насущным потребностям.</a
-                    >
-                  </div>
-                  <a class="news-two-post-link" href="#">Читать</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="item-sale">
-              <div class="item-sale-title">
-                <a class="item-sale-title-link" href="#">Рыба текст</a>
-              </div>
-              <a href="#"
-                ><img
-                  class="item-sale-img"
-                  src="../assets/img/item-salecounter.png"
-                  alt=""
-              /></a>
-              <div class="item-sale-description">
-                <a class="item-sale-description-link" href="#"
-                  >Рыбатекст поможет дизайнеру , верстальщику, вебмастеру
-                  сгенерировать</a
-                >
-              </div>
-            </div>
+            </router-link>
           </div>
         </div>
       </div>
@@ -241,10 +155,20 @@
 export default {
   name: "Home",
   data() {
-    return {};
+    return {
+      loading: true,
+      newsData: []
+    };
   },
-  methods: {},
+  methods: {
+    getNewsData() {
+      this.axios
+        .get("https://api.stylen.online/wp-json/wp/v2/snews/")
+        .then((response) => (this.newsData = response.data));
+    },
+  },
   mounted() {
+    this.getNewsData();
     if (this.$store.state.products.length === 0) {
       this.$store.commit("getProducts");
     }

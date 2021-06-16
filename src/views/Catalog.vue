@@ -25,8 +25,8 @@
           </div>
           <div class="col-md-3">
             <ul class="shops-items">
-              <p :class="manCategory ? '' : 'active'" @click="manCategory = !manCategory">Чоловiча коллекцiя</p>
-              <p :class="womanCategory ? '' : 'active'" @click="womanCategory = !womanCategory">Жiноча коллекцiя</p>
+              <p :class="manCategory ? '' : 'active'" @click="manCategory = !manCategory">Чоловiча колекцiя</p>
+              <p :class="womanCategory ? '' : 'active'" @click="womanCategory = !womanCategory">Жiноча колекцiя</p>
             </ul>
           </div>
           <div class="col-md-9">

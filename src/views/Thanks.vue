@@ -6,7 +6,7 @@
           <div class="col-md-12">
           </div>
           <div class="col-md-12">
-            <h1 class="shops-title">Спасибі вам за покупку!</h1>
+            <h1 class="shops-title">Дякуємо вам за покупку!</h1>
             <p>Наш менеджер скоро подзвонить вам для уточнення деталей.</p>
             <router-link to="/">Продовжити покупки?</router-link>
           </div>
@@ -20,13 +20,13 @@
 export default {
   methods: {
     redirect() {
-      if (this.$store.state.orderProducts.length <= 0) {
+      if (this.$store.state.orderID.length <= 0) {
         this.$router.push({ path: '/' })
       }
     }
   },
-  mounted() {
-    this.redirect();
-  }
+  // mounted() {
+  //   this.redirect();
+  // }
 }
 </script>

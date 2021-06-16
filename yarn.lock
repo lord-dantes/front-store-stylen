@@ -4685,6 +4685,11 @@
   "resolved" "https://registry.npmjs.org/inherits/-/inherits-2.0.3.tgz"
   "version" "2.0.3"
 
+"inputmask-core@^2.2.0":
+  "integrity" "sha1-eadffzpNMxKulf0rVaI2anyR37o="
+  "resolved" "https://registry.npmjs.org/inputmask-core/-/inputmask-core-2.2.0.tgz"
+  "version" "2.2.0"
+
 "inquirer@^7.0.0", "inquirer@^7.1.0":
   "integrity" "sha512-JG3eIAj5V9CwcGvuOmoo6LB9kbAYT8HXffUl6memuszlwDC/qvFAJw49XJ5NROSFNPxp3iQg1GqkFhaY/CR0IA=="
   "resolved" "https://registry.npmjs.org/inquirer/-/inquirer-7.3.3.tgz"
@@ -8443,6 +8448,14 @@
     "vue-hot-reload-api" "^2.3.0"
     "vue-style-loader" "^4.1.0"
 
+"vue-masked-input@^0.5.2":
+  "integrity" "sha1-tH9k6jjkE3gYKRixkoBmVpt1BPQ="
+  "resolved" "https://registry.npmjs.org/vue-masked-input/-/vue-masked-input-0.5.2.tgz"
+  "version" "0.5.2"
+  dependencies:
+    "inputmask-core" "^2.2.0"
+    "vue" "^2.2.6"
+
 "vue-owl-carousel@^2.0.3":
   "integrity" "sha512-TRl6pnbL0HqlebOpEzbGbXL4KxJwlDGxAWeCREjNumvsjB5MXg875y+fkko/M3ML1nxJXIRHw1XWmXgxaQbang=="
   "resolved" "https://registry.npmjs.org/vue-owl-carousel/-/vue-owl-carousel-2.0.3.tgz"
@@ -8485,7 +8498,7 @@
   "resolved" "https://registry.npmjs.org/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz"
   "version" "1.9.1"
 
-"vue@^ 3.0.0 || ^ 2.0.0", "vue@^2 || ^3.0.0-0", "vue@^2.0.0", "vue@^2.5.17", "vue@^2.6.11":
+"vue@^ 3.0.0 || ^ 2.0.0", "vue@^2 || ^3.0.0-0", "vue@^2.0.0", "vue@^2.2.6", "vue@^2.5.17", "vue@^2.6.11":
   "integrity" "sha512-uhmLFETqPPNyuLLbsKz6ioJ4q7AZHzD8ZVFNATNyICSZouqP2Sz0rotWQC8UNBF6VGSCs5abnKJoStA6JbCbfg=="
   "resolved" "https://registry.npmjs.org/vue/-/vue-2.6.12.tgz"
   "version" "2.6.12"

@@ -36,13 +36,13 @@
             </div> -->
           </div>
           <div class="col-md-2 col-sm-3 col-xs-6">
-            <div class="footer-name-info">Информацiя</div>
+            <div class="footer-name-info">Iнформація</div>
             <ul class="footer-nav">
               <li class="footer-item">
-                <a class="footer-link" href="#">Новини</a>
+                <router-link to="/news/" class="footer-link">Новини</router-link>
               </li>
               <li class="footer-item">
-                <a class="footer-link" href="#">Контакти</a>
+                <router-link class="footer-link" to="/contacts/">Контакти</router-link>
               </li>
             </ul>
           </div>
@@ -60,11 +60,11 @@
       </div>
       <div class="certificate-boxsmm">
         <div class="certificate-smm">Приєднуйся до нас</div>
-        <a href="#"><img src="../assets/img/facebook.png" alt="facebook" /></a>
-        <a class="certificate-linkinstagramm" href="#"
+        <!-- <a href="#"><img src="../assets/img/facebook.png" alt="facebook" /></a> -->
+        <a class="certificate-linkinstagramm" target="_blank" href="https://www.instagram.com/style_n__/"
           ><img src="../assets/img/instagramm.png" alt="instagramm"
         /></a>
-        <a href="#"><img src="../assets/img/youtube.png" alt="youtube" /></a>
+        <!-- <a href="#"><img src="../assets/img/youtube.png" alt="youtube" /></a> -->
       </div>
     </div>
   </footer>
